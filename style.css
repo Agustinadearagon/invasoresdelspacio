@@ -232,13 +232,13 @@ body {
     image-rendering: crisp-edges;
 }
 
-/* Controles táctiles – botones visibles */
+/* Controles táctiles – más altos */
 #controles {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 140px;
     display: flex;
     z-index: 20;
     pointer-events: none;
@@ -252,7 +252,7 @@ body {
     border: none;
     border-top: 3px solid #0f0;
     color: #0f0;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     cursor: pointer;
     pointer-events: auto;
     font-family: 'Courier New', monospace;
@@ -304,9 +304,9 @@ body {
         padding: 16px 18px;
     }
     #controles {
-        height: 90px;
+        height: 130px;
     }
     .btn-control {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
     }
 }
