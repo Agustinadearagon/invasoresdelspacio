@@ -232,7 +232,7 @@ body {
     image-rendering: crisp-edges;
 }
 
-/* Controles táctiles (botones grandes abajo) */
+/* Controles táctiles – botones visibles */
 #controles {
     position: absolute;
     bottom: 0;
@@ -242,31 +242,34 @@ body {
     display: flex;
     z-index: 20;
     pointer-events: none;
+    gap: 0;
 }
 
 .btn-control {
     flex: 1;
     height: 100%;
-    background: rgba(0, 40, 0, 0.45);
+    background: #0a5c0a;
     border: none;
-    border-top: 2px solid #0f0;
+    border-top: 3px solid #0f0;
     color: #0f0;
-    font-size: 2.4rem;
+    font-size: 2.6rem;
     cursor: pointer;
     pointer-events: auto;
     font-family: 'Courier New', monospace;
-    text-shadow: 0 0 10px #0f0;
+    text-shadow: 0 0 12px #0f0;
     transition: background 0.1s;
     -webkit-tap-highlight-color: transparent;
 }
 
 .btn-control:first-child {
-    border-right: 1px solid rgba(0, 255, 0, 0.3);
+    border-right: 2px solid #0f0;
 }
 
 .btn-control:active,
 .btn-control.pulsado {
-    background: rgba(0, 120, 0, 0.65);
+    background: #0f0;
+    color: #003300;
+    text-shadow: none;
 }
 
 #overlay-fin {
@@ -304,6 +307,6 @@ body {
         height: 90px;
     }
     .btn-control {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 }
