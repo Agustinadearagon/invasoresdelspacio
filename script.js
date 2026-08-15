@@ -190,7 +190,7 @@ function resize() {
     canvas.height = height;
     if (player) {
         player.x = Math.min(player.x, width - PLAYER_W - 8);
-        player.y = height - PLAYER_H - 16;
+        player.y = height - PLAYER_H - 55;   // más arriba
     }
 }
 
@@ -318,9 +318,10 @@ function empezarJuego() {
     invulnerable = 0;
     keys.left = keys.right = false;
 
+    // Nave más arriba (zona marcada en la foto)
     player = {
         x: width / 2 - PLAYER_W / 2,
-        y: height - PLAYER_H - 16,
+        y: height - PLAYER_H - 55,
         w: PLAYER_W,
         h: PLAYER_H
     };
