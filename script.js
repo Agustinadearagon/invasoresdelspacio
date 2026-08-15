@@ -5,7 +5,7 @@ const PLAYER_W = 36;
 const PLAYER_H = 28;
 const BULLET_W = 3;
 const BULLET_H = 12;
-const CONTROL_H = 100; // altura de la zona de botones
+const CONTROL_H = 140; // botones más altos
 
 // ========== ESTADO ==========
 let canvas, ctx;
@@ -190,7 +190,7 @@ function resize() {
     canvas.height = height;
     if (player) {
         player.x = Math.min(player.x, width - PLAYER_W - 8);
-        player.y = height - PLAYER_H - 55;   // más arriba
+        player.y = height - PLAYER_H - 18;
     }
 }
 
@@ -318,10 +318,10 @@ function empezarJuego() {
     invulnerable = 0;
     keys.left = keys.right = false;
 
-    // Nave más arriba (zona marcada en la foto)
+    // Nave justo por encima de los botones (altura buena)
     player = {
         x: width / 2 - PLAYER_W / 2,
-        y: height - PLAYER_H - 55,
+        y: height - PLAYER_H - 18,
         w: PLAYER_W,
         h: PLAYER_H
     };
