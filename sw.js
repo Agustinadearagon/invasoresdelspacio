@@ -1,4 +1,4 @@
-const CACHE_NAME = "invasores-v5";
+const CACHE_NAME = "invasores-v6";
 
 const FILES_TO_CACHE = [
     "./",
