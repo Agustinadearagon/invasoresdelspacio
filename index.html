@@ -17,7 +17,7 @@
                 <h2>Cómo jugar</h2>
                 <ol>
                     <li>La nave dispara sola continuamente.</li>
-                    <li>Muévete tocando la izquierda o derecha de la pantalla.</li>
+                    <li>Muévete con los botones ← → de abajo (o teclado).</li>
                     <li>Destruye todos los alienígenas.</li>
                     <li>Si te tocan o llegan abajo, pierdes una vida.</li>
                     <li>¡Consigue la mayor puntuación posible!</li>
@@ -60,8 +60,16 @@
             <span>Puntos: <span id="puntos">0</span></span>
             <span>Vidas: <span id="vidas">3</span></span>
             <span>Récord: <span id="record">0</span></span>
+            <button id="btn-mute" class="btn-mute" title="Silenciar / Activar sonido">🔊</button>
         </div>
         <canvas id="canvas"></canvas>
+
+        <!-- Controles táctiles -->
+        <div id="controles">
+            <button id="btn-izq" class="btn-control" aria-label="Izquierda">◀</button>
+            <button id="btn-der" class="btn-control" aria-label="Derecha">▶</button>
+        </div>
+
         <div id="overlay-fin" class="oculta">
             <p id="mensaje-juego"></p>
             <button id="btn-reiniciar" class="btn-principal">REINTENTAR</button>
