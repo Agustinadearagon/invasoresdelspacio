@@ -1,11 +1,11 @@
 // ========== CONFIG ==========
 const ALIEN_W = 26;
 const ALIEN_H = 20;
-const PLAYER_W = 36;
-const PLAYER_H = 28;
+const PLAYER_W = 48;   // más grande
+const PLAYER_H = 36;   // más grande
 const BULLET_W = 3;
 const BULLET_H = 12;
-const CONTROL_H = 140; // botones más altos
+const CONTROL_H = 140;
 
 // ========== ESTADO ==========
 let canvas, ctx;
@@ -190,7 +190,7 @@ function resize() {
     canvas.height = height;
     if (player) {
         player.x = Math.min(player.x, width - PLAYER_W - 8);
-        player.y = height - PLAYER_H - 18;
+        player.y = height - PLAYER_H - 28;  // pequeño hueco con los botones
     }
 }
 
@@ -318,10 +318,10 @@ function empezarJuego() {
     invulnerable = 0;
     keys.left = keys.right = false;
 
-    // Nave justo por encima de los botones (altura buena)
+    // Nave más grande + pequeño hueco con los botones
     player = {
         x: width / 2 - PLAYER_W / 2,
-        y: height - PLAYER_H - 18,
+        y: height - PLAYER_H - 28,
         w: PLAYER_W,
         h: PLAYER_H
     };
@@ -620,17 +620,18 @@ function dibujar() {
 }
 
 function dibujarNave(p) {
+    // Escala automática con PLAYER_W / PLAYER_H
     ctx.fillStyle = "#4cf";
-    ctx.fillRect(p.x + 10, p.y + 12, p.w - 20, 10);
+    ctx.fillRect(p.x + p.w * 0.28, p.y + p.h * 0.43, p.w * 0.44, p.h * 0.36);
     ctx.fillStyle = "#f33";
-    ctx.fillRect(p.x + 13, p.y + 4, p.w - 26, 10);
+    ctx.fillRect(p.x + p.w * 0.36, p.y + p.h * 0.14, p.w * 0.28, p.h * 0.36);
     ctx.fillStyle = "#e00";
-    ctx.fillRect(p.x, p.y + 16, 12, 8);
-    ctx.fillRect(p.x + p.w - 12, p.y + 16, 12, 8);
+    ctx.fillRect(p.x, p.y + p.h * 0.57, p.w * 0.33, p.h * 0.29);
+    ctx.fillRect(p.x + p.w * 0.67, p.y + p.h * 0.57, p.w * 0.33, p.h * 0.29);
     ctx.fillStyle = "#8cf";
-    ctx.fillRect(p.x + 4, p.y + 10, 5, 8);
-    ctx.fillRect(p.x + p.w - 9, p.y + 10, 5, 8);
-    ctx.fillRect(p.x + p.w / 2 - 2, p.y, 4, 14);
+    ctx.fillRect(p.x + p.w * 0.11, p.y + p.h * 0.36, p.w * 0.14, p.h * 0.29);
+    ctx.fillRect(p.x + p.w * 0.75, p.y + p.h * 0.36, p.w * 0.14, p.h * 0.29);
+    ctx.fillRect(p.x + p.w * 0.44, p.y, p.w * 0.12, p.h * 0.5);
 }
 
 function dibujarAlien(a, diving = false) {
